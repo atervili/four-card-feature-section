@@ -1,0 +1,318 @@
+@layer design, reset, utility, base, mobile, tablet, desktop;
+
+@layer design {
+    :root {
+        /* Colors */
+        --color-grey-500: #4d4f62;
+        --color-grey-400: #6a7178;
+        --color-white: #ffffff;
+        --color-red: #ea5454;
+        --color-cyan: #44d3d2;
+        --color-blue: #549ef2;
+        --color-orange: #fcae4a;
+
+        /* Typography */
+        --font-family-text-preset-1: "Poppins", sans-serif;
+        --font-weight-text-preset-1: 600;
+        --font-size-text-preset-1: 2.25rem;
+        --font-style-text-preset-1: normal;
+        --line-height-text-preset-1: 1.4;
+        --letter-spacing-text-preset-1: 0.25px;
+
+        @media (width < 768px) {
+            --font-size-text-preset-1: 1.5rem;
+        }
+
+        --font-family-text-preset-2: "Poppins", sans-serif;
+        --font-weight-text-preset-2: 200;
+        --font-size-text-preset-2: 2.25rem;
+        --font-style-text-preset-2: normal;
+        --line-height-text-preset-2: 1.4;
+        --letter-spacing-text-preset-2: 0.25px;
+
+        @media (width < 768px) {
+            --font-size-text-preset-2: 1.5rem;
+        }
+
+        --font-family-text-preset-3: "Poppins", sans-serif;
+        --font-weight-text-preset-3: 600;
+        --font-size-text-preset-3: 1.25rem;
+        --font-style-text-preset-3: normal;
+        --line-height-text-preset-3: 1.35;
+        --letter-spacing-text-preset-3: 0px;
+
+        --font-family-text-preset-4: "Poppins", sans-serif;
+        --font-weight-text-preset-4: 400;
+        --font-size-text-preset-4: 0.9375rem;
+        --font-style-text-preset-4: normal;
+        --line-height-text-preset-4: 1.4;
+        --letter-spacing-text-preset-4: 0px;
+
+        @media (width < 768px) {
+            --letter-spacing-text-preset-4: 0.1px;
+        }
+
+        --font-family-text-preset-5: "Poppins", sans-serif;
+        --font-weight-text-preset-5: 400;
+        --font-size-text-preset-5: 0.8125rem;
+        --font-style-text-preset-5: normal;
+        --line-height-text-preset-5: 1.6;
+        --letter-spacing-text-preset-5: 0px;
+
+        /* Spacing */
+        --spacing-1000: 100px;
+        --spacing-800: 80px;
+        --spacing-700: 74px;
+        --spacing-600: 60px;
+        --spacing-550: 54px;
+        --spacing-500: 40px;
+        --spacing-400: 32px;
+        --spacing-300: 24px;
+        --spacing-200: 16px;
+        --spacing-100: 8px;
+
+        /* Borders */
+        --border-radius-100: 8px;
+    }
+}
+
+@layer reset {
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    html,
+    body,
+    h1,
+    h2,
+    p,
+    img {
+        margin: 0;
+        padding: 0;
+    }
+}
+
+@layer utility {
+    .text-preset-1 {
+        font-family: var(--font-family-text-preset-1);
+        font-weight: var(--font-weight-text-preset-1);
+        font-size: var(--font-size-text-preset-1);
+        font-style: var(--font-style-text-preset-1);
+        line-height: var(--line-height-text-preset-1);
+        letter-spacing: var(--letter-spacing-text-preset-1);
+    }
+
+    .text-preset-2 {
+        font-family: var(--font-family-text-preset-2);
+        font-weight: var(--font-weight-text-preset-2);
+        font-size: var(--font-size-text-preset-2);
+        font-style: var(--font-style-text-preset-2);
+        line-height: var(--line-height-text-preset-2);
+        letter-spacing: var(--letter-spacing-text-preset-2);
+    }
+
+    .text-preset-3 {
+        font-family: var(--font-family-text-preset-3);
+        font-weight: var(--font-weight-text-preset-3);
+        font-size: var(--font-size-text-preset-3);
+        font-style: var(--font-style-text-preset-3);
+        line-height: var(--line-height-text-preset-3);
+        letter-spacing: var(--letter-spacing-text-preset-3);
+    }
+
+    .text-preset-4 {
+        font-family: var(--font-family-text-preset-4);
+        font-weight: var(--font-weight-text-preset-4);
+        font-size: var(--font-size-text-preset-4);
+        font-style: var(--font-style-text-preset-4);
+        line-height: var(--line-height-text-preset-4);
+        letter-spacing: var(--letter-spacing-text-preset-4);
+    }
+
+    .text-preset-5 {
+        font-family: var(--font-family-text-preset-5);
+        font-weight: var(--font-weight-text-preset-5);
+        font-size: var(--font-size-text-preset-5);
+        font-style: var(--font-style-text-preset-5);
+        line-height: var(--line-height-text-preset-5);
+        letter-spacing: var(--letter-spacing-text-preset-5);
+    }
+}
+
+@layer base {
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+    }
+
+    body {
+        display: grid;
+        justify-items: center;
+        align-items: center;
+        color: var(--color-grey-500);
+        background-color: #fafafa;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+
+        .header hgroup {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-200);
+
+            .subheading {
+                text-align: center;
+            }
+        }
+
+        .cards {
+            display: grid;
+
+            .card {
+                width: 314px;
+                height: 250px;
+                display: flex;
+                flex-direction: column;
+                gap: var(--spacing-400);
+                padding: var(--spacing-400);
+                background-color: var(--color-white);
+                border-radius: var(--border-radius-100);
+                filter: drop-shadow(0px 15px 10px #83a6d280);
+
+                &:nth-of-type(1) {
+                    border-top: 4px solid var(--color-cyan);
+                }
+
+                &:nth-of-type(2) {
+                    border-top: 4px solid var(--color-red);
+                }
+
+                &:nth-of-type(3) {
+                    border-top: 4px solid var(--color-orange);
+                }
+
+                &:nth-of-type(4) {
+                    border-top: 4px solid var(--color-blue);
+                }
+
+                .title {
+                    display: flex;
+                    flex-direction: column;
+                    gap: var(--spacing-100);
+                }
+
+                .icon {
+                    width: 64px;
+                    height: 64px;
+                    align-self: flex-end;
+                }
+            }
+        }
+    }
+}
+
+@layer mobile {
+    @media (width < 768px) {
+        .wrapper {
+            max-width: 375px;
+            gap: var(--spacing-600);
+            padding-block: var(--spacing-550);
+            padding-inline: var(--spacing-400);
+
+            .cards {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-400);
+            }
+        }
+    }
+}
+
+@layer tablet {
+    @media (width >= 768px) and (width < 1440px) {
+        .wrapper {
+            max-width: 660px;
+            gap: var(--spacing-700);
+            align-items: center;
+            padding-block: var(--spacing-800);
+            padding-inline: var(--spacing-550);
+
+            .header {
+                max-width: 540px;
+            }
+
+            .cards {
+                grid-template-columns: repeat(4, 1fr);
+                gap: var(--spacing-400);
+
+                .card {
+                    &:nth-of-type(1) {
+                        grid-column: 2 / span 2;
+                        grid-row: 1;
+                    }
+
+                    &:nth-of-type(2) {
+                        grid-column: 1 / span 2;
+                        grid-row: 2;
+                    }
+
+                    &:nth-of-type(3) {
+                        grid-column: 3 / span 2;
+                        grid-row: 2;
+                    }
+
+                    &:nth-of-type(4) {
+                        grid-column: 2 / span 2;
+                        grid-row: 3;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@layer desktop {
+    @media (width >= 1440px) {
+        .wrapper {
+            max-width: 1114px;
+            gap: var(--spacing-700);
+            align-items: center;
+
+            .header {
+                max-width: 540px;
+            }
+
+            .cards {
+                grid-template-rows: repeat(4, 1fr);
+                gap: var(--spacing-400);
+
+                .card {
+                    &:nth-of-type(1) {
+                        grid-column: 1;
+                        grid-row: 2 / span 2;
+                    }
+
+                    &:nth-of-type(2) {
+                        grid-column: 2;
+                        grid-row: 1 / span 2;
+                    }
+
+                    &:nth-of-type(3) {
+                        grid-column: 2;
+                        grid-row: 3 / span 2;
+                    }
+
+                    &:nth-of-type(4) {
+                        grid-column: 3;
+                        grid-row: 2 / span 2;
+                    }
+                }
+            }
+        }
+    }
+}
